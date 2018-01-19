@@ -20,6 +20,7 @@ Description: This is a program that calculates the net cost of a call (net_cost)
 using namespace std;
 
 void Input(string & cell_num, int & relays, int & call_length);
+void Process(const int relays, const int call_length, double & net_cost, double & call_tax, double & total_cost, double & tax_rate);
 
 
 
@@ -40,23 +41,10 @@ int main()
 
 			//Function calls
 			Input(cell_num, relays, call_length);
+			Process(relays, call_length, net_cost, call_tax, total_cost, tax_rate);
 
 
-      if (relays <= 0 && relays <=5) {
-        tax_rate = 0.01;
-      } else if (relays <= 6 && relays <=11) {
-        tax_rate = 0.03;
-      } else if (relays <= 12 && relays <=20) {
-        tax_rate = 0.05;
-      } else if (relays <= 21 && relays <=50) {
-        tax_rate = 0.08;
-      } else {
-        tax_rate = 0.12;
-      }
 
-      net_cost = relays/50.0 * 0.40 * call_length;
-      call_tax = net_cost * tax_rate;
-      total_cost = net_cost + call_tax;
 
       cout.setf(ios::fixed);
       cout.setf(ios::showpoint);
@@ -84,4 +72,28 @@ void Input(string & cell_num, int & relays, int & call_length){
 	std::cout << "Please enter the number of minutes on the call" << endl;
 	std::cin >> call_length;
 	return;
+}
+void Process(const int relays,
+						 const int call_length,
+						 double & net_cost,
+						 double & call_tax,
+						 double & total_cost,
+					 	 double & tax_rate){
+	 	if (relays <= 0 && relays <=5) {
+      tax_rate = 0.01;
+    } else if (relays <= 6 && relays <=11) {
+      tax_rate = 0.03;
+    } else if (relays <= 12 && relays <=20) {
+      tax_rate = 0.05;
+    } else if (relays <= 21 && relays <=50) {
+      tax_rate = 0.08;
+    } else {
+      tax_rate = 0.12;
+    }
+
+    net_cost = relays/50.0 * 0.40 * call_length;
+    call_tax = net_cost * tax_rate;
+    total_cost = net_cost + call_tax;
+
+		return;
 }

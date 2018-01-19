@@ -21,7 +21,7 @@ using namespace std;
 
 void Input(string & cell_num, int & relays, int & call_length);
 void Process(const int relays, const int call_length, double & net_cost, double & call_tax, double & total_cost, double & tax_rate);
-
+void Output(const string cell_num, const int relays, const int call_length, const double & net_cost, const double & call_tax, const double & total_cost);
 
 
 int main()
@@ -39,25 +39,12 @@ int main()
 	cout.setf(ios::showpoint);
 	cout.precision(2);
 
-
 	while (user_response == "y" || user_response == "Y")
 	{
-
 			//Function calls
 			Input(cell_num, relays, call_length);
 			Process(relays, call_length, net_cost, call_tax, total_cost, tax_rate);
-
-
-
-
-
-
-      std::cout << std::left << setw(30)<< "Cell Phone " << cell_num << endl;
-      std::cout << std::left << setw(30)<< "Number of Relay Stations " << relays << endl;
-      std::cout << std::left << setw(30)<< "Minutes Used " << call_length << endl;
-      std::cout << std::left << setw(30)<< "Net Cost " << net_cost << endl;
-      std::cout << std::left << setw(30)<< "Call Tax " << call_tax << endl;
-      std::cout << std::left << setw(30)<< "Total Cost of Call " << total_cost<< endl;
+			Output(cell_num, relays, call_length, net_cost, call_tax, total_cost);
 
 	    cout<<"Would you like to do another calculation (Y or N): "<<endl;
 	    cin>>user_response;
@@ -98,4 +85,20 @@ void Process(const int relays,
     total_cost = net_cost + call_tax;
 
 		return;
+}
+void Output(const string cell_num,
+	  	 const int relays,
+			 const int call_length,
+			 const double & net_cost,
+			 const double & call_tax,
+			 const double & total_cost){
+
+	std::cout << std::left << setw(30)<< "Cell Phone " << cell_num << endl;
+  std::cout << std::left << setw(30)<< "Number of Relay Stations " << relays << endl;
+  std::cout << std::left << setw(30)<< "Minutes Used " << call_length << endl;
+  std::cout << std::left << setw(30)<< "Net Cost " << net_cost << endl;
+  std::cout << std::left << setw(30)<< "Call Tax " << call_tax << endl;
+  std::cout << std::left << setw(30)<< "Total Cost of Call " << total_cost<< endl;
+
+	return;
 }

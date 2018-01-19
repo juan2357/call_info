@@ -1,5 +1,5 @@
 /***********************************************************
-Juan Perez        Total Points:  10
+Juan Perez        Total Points:  20
 Due Date:  Jan 23, 2018
 Course:  C0P3014
 Assignment:  Program 2
@@ -8,17 +8,13 @@ Professor: Dr. Lofton Bullard
 Description: This is a program that calculates the net cost of a call (net_cost),
               the tax on a call (call_tax)
               and the total cost of the call (total_cost).
-
-
 *************************************************************/
-//Function Prototypes
-
 
 #include <iostream> //standard library for i/o
 #include <string>
 #include <iomanip>
 using namespace std;
-
+//Function Prototypes
 void Input(string & cell_num, int & relays, int & call_length);
 void Process(const int relays, const int call_length, double & net_cost, double & call_tax, double & total_cost, double & tax_rate);
 void Output(const string cell_num, const int relays, const int call_length, const double & net_cost, const double & call_tax, const double & total_cost);

@@ -35,6 +35,10 @@ int main()
   int relays,
       call_length;
 
+	cout.setf(ios::fixed);
+	cout.setf(ios::showpoint);
+	cout.precision(2);
+
 
 	while (user_response == "y" || user_response == "Y")
 	{
@@ -46,9 +50,7 @@ int main()
 
 
 
-      cout.setf(ios::fixed);
-      cout.setf(ios::showpoint);
-      cout.precision(2);
+
 
       std::cout << std::left << setw(30)<< "Cell Phone " << cell_num << endl;
       std::cout << std::left << setw(30)<< "Number of Relay Stations " << relays << endl;

@@ -23,7 +23,6 @@ void Input(string & cell_num, int & relays, int & call_length);
 void Process(const int relays, const int call_length, double & net_cost, double & call_tax, double & total_cost, double & tax_rate);
 void Output(const string cell_num, const int relays, const int call_length, const double & net_cost, const double & call_tax, const double & total_cost);
 
-
 int main()
 {
 	string user_response = "y";
@@ -49,7 +48,6 @@ int main()
 	    cout<<"Would you like to do another calculation (Y or N): "<<endl;
 	    cin>>user_response;
 	}
-
 	return  0;
 }
 //Function Definitions

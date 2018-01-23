@@ -1,9 +1,9 @@
 /***********************************************************
-Juan Perez        Total Points:  20
-Due Date:  Jan 23, 2018
-Course:  C0P3014
-Assignment:  Program 2
+Name:  Juan Perez   Z#: 23026404
+Course: Foundations of Computer Science (COP3014)
 Professor: Dr. Lofton Bullard
+Due Date: 01/23/18      Due Time: 11:59 PM
+Total Points: 20     Assignment 1: call_info
 
 Description: This is a program that calculates the net cost of a call (net_cost),
               the tax on a call (call_tax)
@@ -21,6 +21,7 @@ void Output(const string cell_num, const int relays, const int call_length, cons
 
 int main()
 {
+	//Variable Declarations
 	string user_response = "y";
   string cell_num;
   double net_cost,
@@ -33,12 +34,26 @@ int main()
 	cout.setf(ios::fixed);
 	cout.setf(ios::showpoint);
 	cout.precision(2);
-
+	//Runs program until user enters "n"
 	while (user_response == "y" || user_response == "Y")
 	{
+			
 			//Function calls
-			Input(cell_num, relays, call_length);
+			//Name:  Input
+			//Precondition: The varialbes cell_num, relays, and call_length have not been initialized
+			//Postcondition: The variables have been initialized by the user.
+			//Description: Get input values from user.
+      Input(cell_num, relays, call_length);
+			//Name:  Process
+			//Precondition: The variables have been initialized by the user.
+			//Postcondition: Conditional statements initialize relay variables.
+			//Description: Calculates net_cost, call_tax and total_cost.
 			Process(relays, call_length, net_cost, call_tax, total_cost, tax_rate);
+			//Name:  Output
+			//Precondition: The variables have been initialized and calculated
+			//Postcondition: Results are displayed.
+			//Description: Prints results from user input and calculations.
+
 			Output(cell_num, relays, call_length, net_cost, call_tax, total_cost);
 
 	    cout<<"Would you like to do another calculation (Y or N): "<<endl;
@@ -47,6 +62,10 @@ int main()
 	return  0;
 }
 //Function Definitions
+//Name:  Input
+//Precondition: The varialbes cell_num, relays, and call_length have not been initialized
+//Postcondition: The variables have been initialized by the user.
+//Description: Get input values from user.
 void Input(string & cell_num, int & relays, int & call_length){
 	std::cout << "Pleae enter you phone number: " << endl;
 	std::cin >> cell_num;
@@ -56,6 +75,10 @@ void Input(string & cell_num, int & relays, int & call_length){
 	std::cin >> call_length;
 	return;
 }
+//Name:  Process
+//Precondition: The variables have been initialized by the user.
+//Postcondition: Conditional statements initialize relay variables.
+//Description: Calculates net_cost, call_tax and total_cost.
 void Process(const int relays,
 						 const int call_length,
 						 double & net_cost,
@@ -80,6 +103,11 @@ void Process(const int relays,
 
 		return;
 }
+//Name:  Output
+//Precondition: The variables have been initialized and calculated
+//Postcondition: Results are displayed.
+//Description: Prints results from user input and calculations.
+
 void Output(const string cell_num,
 	  	 const int relays,
 			 const int call_length,
